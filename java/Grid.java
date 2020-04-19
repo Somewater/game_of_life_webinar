@@ -1,12 +1,12 @@
 public class Grid {
-    private final int width;
-    private final int height;
-    private final boolean[] cells;
+    public final int width;
+    public final int height;
+    private final boolean[][] cells;
 
     public Grid(int width, int height) {
         this.width = width;
         this.height = height;
-        this.cells = new boolean[width * height];
+        this.cells = new boolean[width][height];
     }
 
     void setAlive(int x, int y, boolean alive) {
@@ -14,8 +14,7 @@ public class Grid {
         y = y % height;
         if (x < 0) x += width;
         if (y < 0) y += height;
-        int position = x + y * width;
-        cells[position] = alive;
+        cells[x][y] = alive;
     }
 
     boolean getAlive(int x, int y) {
@@ -23,8 +22,7 @@ public class Grid {
         y = y % height;
         if (x < 0) x += width;
         if (y < 0) y += height;
-        int position = x + y * width;
-        return cells[position];
+        return cells[x][y];
     }
 
     int aliveNeighbours(int x, int y) {

@@ -2,15 +2,17 @@ class Grid:
     def __init__(self, width, height):
         self.width = width
         self.height = height
-        self.cells = [False] * (width * height)
+        self.cells = [[False] * height for _ in range(width)]
 
     def set_alive(self, x, y, alive):
-        position = (x % self.width) + (y % self.height) * self.width
-        self.cells[position] = alive
+        x = x % self.width
+        y = y % self.height
+        self.cells[x][y] = alive
 
     def get_alive(self, x, y):
-        position = (x % self.width) + (y % self.height) * self.width
-        return self.cells[position]
+        x = x % self.width
+        y = y % self.height
+        return self.cells[x][y]
 
     def alive_neighbours(self, x, y):
         result = 0
