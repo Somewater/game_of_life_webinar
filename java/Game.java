@@ -52,7 +52,7 @@ public class Game {
                 System.out.print((char) 27);
                 System.out.print("[2J");
                 System.out.println(grid);
-                Thread.sleep(100);
+                //Thread.sleep(100);
             }
         }
 

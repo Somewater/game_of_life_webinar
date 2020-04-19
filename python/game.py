@@ -38,7 +38,7 @@ if __name__ == '__main__':
         if interactive:
             print(chr(27) + "[2J")
             print(grid)
-            time.sleep(0.1)
+            #time.sleep(0.1)
 
     with open(output, 'w') as f:
         for y in range(grid.height):
