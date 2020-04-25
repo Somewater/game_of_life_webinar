@@ -43,7 +43,7 @@ public class Game {
             while (reader.ready()) {
                 String line = reader.readLine();
                 if (width == 0) {
-                    width = line.length() / 2;
+                    width = (int) Math.ceil(line.length() / 2.0);
                 }
                 if (!line.isEmpty()) {
                     height++;
